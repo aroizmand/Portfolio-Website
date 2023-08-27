@@ -1,0 +1,74 @@
+.more-navbar {
+  background: rgb(30, 30, 30);
+  height: 5rem;
+  width: 100vw;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* instead of space-between */
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.desktopMenuListItem {
+  margin: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.desktopMenuListItem:hover {
+  color: rgb(132, 205, 129);
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid rgb(132, 205, 129);
+}
+
+.more-navbar > div {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the content within the div */
+  align-items: center;
+}
+
+.logo-container,
+.custom-dropdown-container {
+  max-width: 10rem; /* You can adjust this value as needed */
+}
+
+.home {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+  .desktopMenu {
+    display: none;
+  }
+
+  .desktopMenuBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .home {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .more-navbar {
+    padding: 1rem; /* Adjust the padding */
+    justify-content: space-between; /* To distribute items evenly */
+  }
+
+  .logo-container,
+  .custom-dropdown-container {
+    max-width: none;
+    margin: 2rem;
+  }
+}

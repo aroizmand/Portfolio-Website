@@ -1,0 +1,255 @@
+:root {
+  --main-color: rgb(132, 205, 129);
+}
+
+.gallery {
+  width: 100vw;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+
+.image-item {
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-item img,
+.image-item canvas {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.image-item:hover {
+  transform: scale(1.07);
+}
+
+.image-item h3 {
+  font-size: 1.75rem;
+  font-weight: 100;
+  color: var(--main-color);
+}
+
+.image-item p {
+  font-size: medium;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: rgb(30, 30, 30);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 60rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.modal-image-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 100;
+  color: var(--main-color);
+  margin: 0.5rem 0;
+}
+
+.modal-description {
+  font-size: medium;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.close {
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  position: absolute;
+  top: 4.2rem;
+  right: 10.85rem;
+  cursor: pointer;
+  padding: 0.1rem 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10002;
+}
+
+.arrow {
+  font-size: 5vw;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background: transparent;
+  border: none !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background-color: transparent;
+  padding: 1vw;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow-left {
+  left: 5vw;
+}
+
+.arrow-right {
+  right: 5vw;
+}
+
+.modal-content {
+  cursor: auto;
+}
+
+.arrow-left-lower,
+.arrow-right-lower {
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 38rem;
+  z-index: 100;
+  background-color: transparent;
+  padding: 1vw;
+  transition: all 0.2s ease-in-out;
+  display: none;
+}
+
+.arrow-left-lower {
+  left: calc(50% - 15vw);
+}
+
+.arrow-right-lower {
+  right: calc(50% - 15vw);
+}
+
+@media screen and (max-width: 990px) {
+  .modal-content {
+    width: 50rem;
+  }
+
+  .modal-image-container {
+    padding-top: 56.25%;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .arrow-left-lower,
+  .arrow-right-lower {
+    display: block;
+    bottom: 0;
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .modal-content {
+    width: 40rem;
+  }
+
+  .modal-image-container {
+    padding-top: 56.25%;
+  }
+
+  .arrow-left-lower,
+  .arrow-right-lower {
+    display: block;
+    bottom: 1vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .modal-content {
+    width: 38rem;
+  }
+
+  .modal-image-container {
+    padding-top: 56.25%;
+  }
+  .close {
+    font-size: 2rem;
+  }
+
+  .arrow {
+    font-size: 4vw;
+    padding: 2vw;
+  }
+
+  .arrow-left-lower,
+  .arrow-right-lower {
+    margin: 0 -5rem;
+  }
+}

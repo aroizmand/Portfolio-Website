@@ -1,0 +1,17 @@
+.footer {
+  width: 100vw;
+  height: 4rem;
+  background: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: small;
+  margin-top: 0.75rem;
+}
+
+.mini {
+  font-size: 0.75rem;
+  font-style: oblique;
+}
